@@ -1,0 +1,32 @@
+{
+  "name": "dsfinal-server",
+  "version": "1.0.0",
+  "description": "Express server application for the ds final project data collection app",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "dotenvx run -f .env -f .env.development -- node src/server.js",
+    "start": "dotenvx run -f .env -f .env.production -- node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.22.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.8.1",
+    "pino": "^9.5.0",
+    "pino-http": "^10.3.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "pino-pretty": "^12.1.0"
+  }
+}
