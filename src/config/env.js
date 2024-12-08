@@ -28,6 +28,8 @@ const envSchema = z.object({
 	CORS_ENABLED: stringToBool().default('false'),
 	//Paths
 	PATH_LOGS: z.string().default('./logs/'),
+	//API keys
+	APIKEY_GOOGLE: z.string(),
 }).readonly();
 
 //actually perform the validation

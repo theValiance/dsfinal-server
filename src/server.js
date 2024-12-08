@@ -4,9 +4,10 @@
  */
 
 import express from 'express';
+import 'express-async-errors';
 import cors from 'cors';
-//import { routes } from './routes/routes.js';
 import { env, logger, httpLogger, mongooseConnectPromise, helmet } from './config/index.js';
+import routes from './routes/routes.js';
 
 logger.info(`Starting ${env.APP_NAME} application...`);
 
@@ -41,9 +42,7 @@ if (env.CORS_ENABLED) {
 app.use(express.json());
 
 //application routes
-app.use('*', (_req, res) => {
-	res.send('hello world');
-});
+app.use('/', routes);
 
 //if no route was matched we send whatever we have so far, or a 404 for no match
 app.use((_req, res) => {
